@@ -62,3 +62,4 @@
 - My code is running but I made some mistake in the code and model could not learn addition. 
 6. Mention what loss function you picked and why!
     - I chose Cross Entropy Loss as the loss function because out of both the part of network was giving probailistic output of 10 x 1 and 19 x 1. 
+![nn](https://user-images.githubusercontent.com/11247181/119197356-39fa3080-baa5-11eb-87c5-0d6200621f72.png)
