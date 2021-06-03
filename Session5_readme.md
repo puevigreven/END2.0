@@ -127,7 +127,7 @@ Total time elapsed: 00:00:00
 
 ## Training and Vaidation Loss Graph
 
-[Overfitting](https://github.com/puevigreven/END2.0/blob/main/overfit.png)
+![Overfitting](https://github.com/puevigreven/END2.0/blob/main/overfit.png)
 
 
 
