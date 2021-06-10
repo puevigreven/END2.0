@@ -2,8 +2,11 @@
 
 **About Dataset:** Tweet dataset that has 3 classes - Positive, Negative, Neutral. The distribution is as follows 
 **Data Distribution**
+
 | 0 | 931 |Neutral
+
 | 1 | 352 |Positive
+
 | 2 | 81  | Negative
 
 # Types of Encoder Decoder Architecture 
