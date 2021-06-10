@@ -138,7 +138,7 @@ Defining Encoder and Decoder (Same as above)
 
 
 
-##  Encoder Decoder Output of Connected Hidden Model
+##  Encoder Decoder Output of Connected Hidden Output Model
 Encoder Output of each word
 
 		
@@ -472,7 +472,7 @@ Output of Decoder(Decoder ran for only 4 iterations)
 	        -2.0833e-01,  2.3432e-01,  1.1706e-01, -1.2224e-01,  1.9470e-01],
 	       device='cuda:0', grad_fn=<SelectBackward>)
 
-##  Encoder Decoder Output of Disconnected Hidden Model
+##  Encoder Decoder Output of Disconnected Hidden Output Model
 Encoder Output of each word
 
     
