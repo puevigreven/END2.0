@@ -1,36 +1,34 @@
 # Session 9
 
 ## Recall, Precision, and F1 Score
-![alt TP,TN, FP,FN](https://github.com/puevigreven/END2.0/blob/main/Session_9/prec_rec.png)
+
+![alt TP,TN, FP,FN](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/prec_rec.png)
 
 ### Precision -
 Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. The question that this metric answer is of all passengers that labeled as survived, how many actually survived? High precision relates to the low false positive rate. We have got 0.788 precision which is pretty good.
-
-<img src="https://render.githubusercontent.com/render/math?math= Precision = TP/(TP \+ FP)">
+![alt Precision](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/precision.png)
 
 ### Recall (Sensitivity) -
  Recall is the ratio of correctly predicted positive observations to the all observations in actual class - yes. The question recall answers is: Of all the passengers that truly survived, how many did we label? We have got recall of 0.631 which is good for this model as it’s above 0.5.
 
 $$Recall = TP/(TP+FN )$$
+![alt Recall](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/recall.png)
 
 ### F1 score - 
 F1 Score is the weighted average of Precision and Recall. Therefore, this score takes both false positives and false negatives into account. Intuitively it is not as easy to understand as accuracy, but F1 is usually more useful than accuracy, especially if you have an uneven class distribution. Accuracy works best if false positives and false negatives have similar cost. If the cost of false positives and false negatives are very different, it’s better to look at both Precision and Recall.
 
-$$F1Score = 2*(Recall * Precision) / (Recall + Precision)$$$
+![alt F1 Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/f1score.png)
 
 
 ## Bleu Score
 The Bilingual Evaluation Understudy Score, or BLEU for short, is a metric for evaluating a generated sentence to a reference sentence.
 
-$$\text{BLEU} = \text{BP} \cdot \exp \bigg( \sum_{n=1}^{N} w_n \log p_n \bigg)$$
+![alt Bleu Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/bleuscore.png)
 
 where $$p_n$$ is the modified precision for gram, the base of $$e, w_n$$ is the natural base, is weight between 0 and 1 for $$\log p_n$$ and $$\sum_{n=1}^{N} w_n = 1$$, and BP is the brevity penalty to penalize short machine translations.
 
-$$\text{BP} = 
-\begin{cases} 
-    1 & \text{if } c > r \\
-    \exp \big(1-\frac{r}{c}\big) & \text{if } c \leq r
-\end{cases}$$
+![alt BP](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/brevity.png)
+
 
 where $$c$$ is the number of unigrams (length) in all the candidate sentences, and  is the best match lengths for each candidate sentence in the corpus. Here the best match length is the closest reference sentence length to the candidate sentences. 
 ```
@@ -50,13 +48,13 @@ Intuitively, perplexity can be understood as a measure of uncertainty. The perpl
 
 Mathematically, the perplexity of a language model is defined as:
 
-$$\textrm{PPL}(P, Q) = 2^{\textrm{H}(P, Q)}$$
+![alt Perplexity Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/perplexity_score.png)
 
 Less entropy (or less disordered system) is favorable over more entropy. Because predictable results are preferred over randomness. This is why people say low perplexity is good and high perplexity is bad since the perplexity is the exponentiation of the entropy (and you can safely think of the concept of perplexity as entropy).
-![alt TP,TN, FP,FN](https://github.com/puevigreven/END2.0/blob/main/Session_9/preplexity.png)
+![alt Perplexity](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/preplexity.png)
 
 
 ### Bert Score
 
 BERTScore leverages the pre-trained contextual embeddings from BERT and matches words in candidate and reference sentences by cosine similarity. It has been shown to correlate with human judgment on sentence-level and system-level evaluation. Moreover, BERTScore computes precision, recall, and F1 measure, which can be useful for evaluating different language generation tasks.
-![alt BERT Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/bert_Score.png)
+![alt BERT Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/bert_Score.png)
