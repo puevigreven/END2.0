@@ -1,7 +1,7 @@
 # Session 9
 
 ## Recall, Precision, and F1 Score
-
+![alt TP,TN, FP,FN](https://github.com/puevigreven/END2.0/blob/main/Session_9/prec_rec.png)
 
 ### Precision -
 Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. The question that this metric answer is of all passengers that labeled as survived, how many actually survived? High precision relates to the low false positive rate. We have got 0.788 precision which is pretty good.
@@ -52,9 +52,10 @@ Mathematically, the perplexity of a language model is defined as:
 $$\textrm{PPL}(P, Q) = 2^{\textrm{H}(P, Q)}$$
 
 Less entropy (or less disordered system) is favorable over more entropy. Because predictable results are preferred over randomness. This is why people say low perplexity is good and high perplexity is bad since the perplexity is the exponentiation of the entropy (and you can safely think of the concept of perplexity as entropy).
-/image
+![alt TP,TN, FP,FN](https://github.com/puevigreven/END2.0/blob/main/Session_9/preplexity.png)
 
 
 ### Bert Score
 
 BERTScore leverages the pre-trained contextual embeddings from BERT and matches words in candidate and reference sentences by cosine similarity. It has been shown to correlate with human judgment on sentence-level and system-level evaluation. Moreover, BERTScore computes precision, recall, and F1 measure, which can be useful for evaluating different language generation tasks.
+![alt BERT Score](https://github.com/puevigreven/END2.0/blob/main/Session_9/bert_Score.png)
