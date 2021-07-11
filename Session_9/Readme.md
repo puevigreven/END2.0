@@ -6,7 +6,7 @@
 ### Precision -
 Precision is the ratio of correctly predicted positive observations to the total predicted positive observations. The question that this metric answer is of all passengers that labeled as survived, how many actually survived? High precision relates to the low false positive rate. We have got 0.788 precision which is pretty good.
 
-$$Precision = TP/(TP+FP)$$
+$ Precision = TP/(TP+FP)$
 ### Recall (Sensitivity) -
  Recall is the ratio of correctly predicted positive observations to the all observations in actual class - yes. The question recall answers is: Of all the passengers that truly survived, how many did we label? We have got recall of 0.631 which is good for this model as it’s above 0.5.
 
