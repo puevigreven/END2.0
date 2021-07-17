@@ -9,8 +9,9 @@ Without Teacher Forcing, we would feed “Duck” back to our RNN to predict the
 
 
 ![alt Without Teacher Forcing](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/without_teacher_forcing.png)
-On the other hand, if we use Teacher Forcing, we would feed “trump” to our RNN for the 3rd prediction, after computing and recording the loss for the 2nd prediction.
 
+
+On the other hand, if we use Teacher Forcing, we would feed “trump” to our RNN for the 3rd prediction, after computing and recording the loss for the 2nd prediction.
 
 ![alt With Teacher forcing](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/with_teacher_forcing.png)
 
@@ -48,7 +49,7 @@ Local attention mechanism selectively focuses on a small window of context and i
 
 ![alt Local Attention](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/local_attention.png)
 ### Comparision with Classroom code
-The Glove embedding approach was expected to perform better than classroom code, but I have observed the opposite (May be because of the a bug). 
+The Glove embedding approach was expected to perform better than classroom code, but I have observed the opposite (may be because of a bug). 
 
 Following are log comparision for first 5 steps:
 
