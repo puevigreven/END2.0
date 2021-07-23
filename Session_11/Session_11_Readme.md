@@ -115,4 +115,5 @@ output_lang.index2word[top_index.item()], attn_weights
 
 
 #### Complete Attention Mechanism Diagram
+![alt Pytorch Attention Mechanism](https://github.com/puevigreven/END2.0/blob/main/Session_11/attention_mech.png)
 
