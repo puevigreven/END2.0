@@ -1,5 +1,8 @@
 # Session 11
 
+#### Pytorch Attention Mechanism Diagram
+![alt Pytorch Attention Mechanism](https://github.com/puevigreven/END2.0/blob/main/Session_11/attention_mech.png)
+
 ## 1. Encoder Feed-forward manual steps
 ##### Step 1  - Create Embedding and LSTM Objects with appropriate dimension 
 
@@ -113,7 +116,4 @@ top_value, top_index = output.data.topk(1)
 output_lang.index2word[top_index.item()], attn_weights
 ```
 
-
-#### Complete Attention Mechanism Diagram
-![alt Pytorch Attention Mechanism](https://github.com/puevigreven/END2.0/blob/main/Session_11/attention_mech.png)
 
