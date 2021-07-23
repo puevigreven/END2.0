@@ -7,10 +7,13 @@ Let us assume we want to train an Machine Translation model(Chinese to English),
 
 Without Teacher Forcing, we would feed “Duck” back to our RNN to predict the 3rd word. Let’s say the 3rd prediction is “cartoon”. Even though it makes sense for our model to predict “cartoon” given the input is “duck”, it is different from the ground truth.
 
-![alt Without Teacher Forcing](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/prec_rec.png)
+
+![alt Without Teacher Forcing](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/without_teacher_forcing.png)
+
+
 On the other hand, if we use Teacher Forcing, we would feed “trump” to our RNN for the 3rd prediction, after computing and recording the loss for the 2nd prediction.
 
-![alt With Teacher forcing](https://github.com/puevigreven/END2.0/blob/main/Session_9/images/prec_rec.png)
+![alt With Teacher forcing](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/with_teacher_forcing.png)
 
 ## What is decoder attention actually doing?
 
@@ -44,9 +47,9 @@ output, hidden = self.gru(output, hidden)
 #### 2. Local Attention Mechanism : 
 Local attention mechanism selectively focuses on a small window of context and is differentiable. This approach has an advantage of avoiding the expensive computation incurred in the soft attention and at the same time, is easier to train than the hard attention approach.
 
-![alt Local Attention](local)
+![alt Local Attention](https://github.com/puevigreven/END2.0/blob/main/Session_10/images/local_attention.png)
 ### Comparision with Classroom code
-The Glove embedding approach was expected to perform better than classroom code, but I have observed the opposite (May be because of the a bug). 
+The Glove embedding approach was expected to perform better than classroom code, but I have observed the opposite (may be because of a bug). 
 
 Following are log comparision for first 5 steps:
 
