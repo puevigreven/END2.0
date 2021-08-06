@@ -15,7 +15,8 @@ Multi30K is a dataset to stimulate multilingual multimodal research for English-
 
 ###### This task focuses on Machine Translation
 
-### Output of training for 10 epochs:
+### Output of training for 10 epochs:  - [Notebook](https://github.com/puevigreven/END2.0/blob/main/Session_12/Assignment12_transformer_from_scratch_on_nmt.ipynb)
+
     Epoch: 01 | Time: 1m 23s
     	Train Loss: 5.791 | Train PPL: 327.313
     	 Val. Loss: 5.674 |  Val. PPL: 291.200
@@ -46,11 +47,11 @@ Multi30K is a dataset to stimulate multilingual multimodal research for English-
     Epoch: 10 | Time: 1m 23s
     	Train Loss: 5.552 | Train PPL: 257.665
     	 Val. Loss: 5.762 |  Val. PPL: 317.934
-
+ 
 ##### 2. SQuAD 
 Stanford Question Answering Dataset (SQuAD) is a reading comprehension dataset, consisting of questions posed by crowdworkers on a set of Wikipedia articles, where the answer to every question is a segment of text, or span, from the corresponding reading passage, or the question might be unanswerable.
 ######  This task is focuses on the task of question answering
 
-Note - I was not able to successfully run the Transformer Model on this dataset.
+Note - I was not able to successfully run the Transformer Model on this dataset. [Notebook](https://github.com/puevigreven/END2.0/blob/main/Session_12/Session_12_SQuAD_Dataset.ipynb)
 
 
