@@ -212,7 +212,27 @@ Sentence 5:
 
 
 ### Example Sentences : 
+    Somebody just left - guess who.
+    Predicted: 1
+    Actual: 1
 
+    They claimed they had settled on something, but it wasn't clear what they had settled on.
+    Predicted: 1
+    Actual: 1
+    
+    If Sam was going, Sally would know where.
+    Predicted: 1
+    Actual: 1
+    
+    They're going to serve the guests something, but it's unclear what.
+    Predicted: 1
+    Actual: 1
+    
+    She's reading. I can't imagine what.
+    Predicted: 1
+    Actual: 1
+    
+    
 ### BART 
 
 BART is a denoising autoencoder for pretraining sequence-to-sequence models. 
@@ -224,6 +244,37 @@ It is trained by
 It uses a standard Transformer-based neural machine translation architecture. It uses a standard seq2seq/NMT architecture with a bidirectional encoder (like BERT) and a left-to-right decoder (like GPT). This means the encoder's attention mask is fully visible, like BERT, and the decoder's attention mask is causal, like GPT2.
 ![BART](https://github.com/puevigreven/END2.0/blob/main/Session_14/BART_1.png)
 
+### ARCHITECTURE:
+
+Image created by the author of this article
+As the authors have suggested in the paper, it is a transformer based Seq2Seq model that uses corrupted source text and then tries to denoise the source text by regenerating the original text from decoder and each layer of the decoder attends to the final hidden layer of encoder. It can be seen as a Seq2Seq model modified to work as an auto-encoder. A notable feature in the architecture is the use of GELU instead of RELU activation layer. When compared to BERT, it doesn’t make use of a feed-forward network at the top for word prediction while BERT does. Moreover, BART uses just 10% more parameters compared to equivalent BERT based architecture and achieves better performance for language generation tasks. The parameters involved in the architecture are initialized as a normal distribution ~ N(0.00,0.02). The authors have talked about providing two different pretrained models as per the user’s requirement:
+    
+    Base-Case Model (6 layered architecture)
+
+    Large-Case Model (12 layered architecture)
+
+To prepare model for pre-training, firstly, some tokens from the input/source text are corrupted randomly (addition of noise schemes) and while training the regeneration loss is optimized using cross-entropy loss between output and the decoder’s output. Unlike existing denoising auto-encoders, which are tailored to specific noising schemes, BART allows us to apply any type of document corruption. In the extreme case, where all information about the source is lost, BART is equivalent to a language model
+
+    1. Token Masking : Random tokens are sampled and are masked with [MASK] tokens.
+    2. Token Deletion : Random tokens are sampled and deleted (similar as masking) and the model adds new token in their place.
+    3. Token Infilling : A number of text spans (group of contiguous tokens) is drawn from Poisson’s distribution and each span is replaced by a masked token [MASK].
+    4. Sentence Permutation : Random shuffling of document’s sentences.
+    5. Document Rotation : A token is uniformly chosen at random and the document is rotated about that token so that the document begins with that token.
+    
+### Applications:
+BART can be fine-tuned to have impressive performance over various downstream tasks:
+
+- Sequence Classification: The pretrained BART is used and the final representation of the decoder’s output (top hidden states of decoder) is used as meaningful input representation of sequence and is used in a new multi-class classifier.
+
+- Token Classification: The pretrained BART is used and the final representation of the decoder’s output (top hidden states of decoder) provides the meaningful representation of each of the words and is used for classification of token.
+
+- Sequence Generation: It is similar to denoising pre-training objective as the decoder outputs sequence which has information copied from the original input sequence. It can be used for sequence generation in summarization and question answering tasks.
+
+- Machine Translation: The whole pretrained encoder-decoder is assumed as decoder that will generate the target sequence and a new encoder is brought that takes source sequence as input. While training, the parameters of the pretrained architecture are frozen, only new encoder’s parameters are learned in first step where the encoder tries to learn the alignment between the source and target sequences. In second step, the whole architecture is learned for fewer iterations.
+
+
+### Training Logs   
+    
     INFO:simpletransformers.seq2seq.seq2seq_utils: Creating features from dataset file at cache_dir/
     100%
     21829/21829 [00:10<00:00, 2178.22it/s]
