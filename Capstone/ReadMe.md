@@ -1,4 +1,4 @@
-Dense Passage Retrieval
+### Dense Passage Retrieval
 Dense Passage Retrieval (DPR) for ODQA was introduced in 2020 as an alternative to the traditional TF-IDF and BM25 techniques for passage retrieval.
 
 The abstract from the paper is the following:
@@ -22,8 +22,9 @@ The other model — EQ — maps a question into an encoded question vector.
 
 During training, we feed a question-context pair into our DPR model, and the model weights will be optimized to maximize the dot product between two respective Eᴘ/EQ model outputs:
 
-
+![alt Retriever](https://github.com/puevigreven/END2.0/blob/main/Capstone/qna.png)
 A high-level view of the flow of data through a DPR model during training.
+Source : https://towardsdatascience.com/how-to-create-an-answer-from-a-question-with-dpr-d76e29cc5d60
 
 
 
@@ -47,6 +48,9 @@ And that’s it! Our retriever has identified the most relevant contexts for our
 
 ### 2. Generator
 Generator, after getting the documents, along with the query, generates the answer to the query, maximizing the probability p(y|x,z) or minimizing the log-likelihood of this probability.
+![alt Retriever](https://github.com/puevigreven/END2.0/blob/main/Capstone/bart.png)
+
+
 BART is used as the generator model. This takes as input the documents (passed on from retriever) concatenated together, pre-pended with the query, generates the answer token by token, minimizing the log-likelihood of p(y|x,z). So this BART generator works as described below: So e.g. three documents, z1, z2 and z3 get selected given the query x, maximizing the probability p(z|x). So now we have three latent documents for the query x : (x,z1), (x,z2) and (x,z3). Now, lets say BART model generates sequence for each of the latent documents, say, y11, y12 for z1, y21, y22 for z2 and y31, y32 for z3. Now we have 6 hypotheses to test. So we calculate the probability for each of these for each of the documents. So for example, for y11,  This is done for each yij, i=1,2,3 and j=1,2 to get the probability p(yij|x). Maximum value of this is returned.
 
 
