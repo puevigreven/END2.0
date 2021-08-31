@@ -22,8 +22,8 @@ The other model — EQ — maps a question into an encoded question vector.
 
 During training, we feed a question-context pair into our DPR model, and the model weights will be optimized to maximize the dot product between two respective Eᴘ/EQ model outputs:
 
-![alt Retriever](https://github.com/puevigreven/END2.0/blob/main/Capstone/qna.png)
-A high-level view of the flow of data through a DPR model during training.
+![alt Retriever: A high-level view of the flow of data through a DPR model during training.
+](https://github.com/puevigreven/END2.0/blob/main/Capstone/qna.png)
 Source : https://towardsdatascience.com/how-to-create-an-answer-from-a-question-with-dpr-d76e29cc5d60
 
 
